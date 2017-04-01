@@ -1,12 +1,15 @@
 <!DOCTYPE HTML>
-<html>
+<html ng-app="myApp">
 
 <head>
-  <title>simplestyle_banner - a page</title>
+  <title>Providence primary - a page</title>
   <meta name="description" content="website description" />
   <meta name="keywords" content="website keywords, website keywords" />
   <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
   <link rel="stylesheet" type="text/css" href="style/style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src='js/main.js'></script>
 </head>
 
 <body>
@@ -15,15 +18,14 @@
       <div id="logo">
         <div id="logo_text">
           <!-- class="logo_colour", allows you to change the colour of the text -->
-          <h1><a href="index.html">simple<span class="logo_colour">style_banner</span></a></h1>
-          <h2>Simple. Contemporary. Website Template.</h2>
+          <div ng-include ="'header.html'"></div>
         </div>
       </div>
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
           <li><a href="index.html">Home</a></li>
-          <li><a href="examples.html">Examples</a></li>
+          <li><a href="founders.html">Founders</a></li>
           <li class="selected"><a href="page.html">A Page</a></li>
           <li><a href="another_page.html">Another Page</a></li>
           <li><a href="contact.html">Contact Us</a></li>
@@ -37,10 +39,7 @@
           <div class="sidebar_top"></div>
           <div class="sidebar_item">
             <!-- insert your sidebar items here -->
-            <h3>Latest News</h3>
-            <h4>New Website Launched</h4>
-            <h5>February 1st, 2014</h5>
-            <p>2014 sees the redesign of our website. Take a look around and let us know what you think.<br /><a href="#">Read more</a></p>
+            <div ng-include ="'side_news.html'"></div>
           </div>
           <div class="sidebar_base"></div>
         </div>
@@ -82,8 +81,7 @@
     </div>
     <div id="content_footer"></div>
     <div id="footer">
-      <p><a href="index.html">Home</a> | <a href="examples.html">Examples</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
-      <p>Copyright &copy; simplestyle_banner | <a href="http://validator.w3.org/check?uri=referer">HTML5</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer">CSS</a> | <a href="http://www.html5webtemplates.co.uk">HTML5 Web Templates</a></p>
+      <div ng-include ="'footer.html'"></div>
     </div>
   </div>
 </body>
