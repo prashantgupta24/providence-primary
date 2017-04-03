@@ -13,7 +13,7 @@
   <script src='js/main.js'></script>
 </head>
 
-<body>
+<body ng-controller="mainCtrl">
   <div id="main">
     <div id="header">
       <div id="logo">
@@ -25,15 +25,16 @@
       <div id="menubar">
         <ul id="menu">
           <!-- put class="selected" in the li tag for the selected page - to highlight which page you're on -->
-          <li class="selected"><a href="#">Home</a></li>
+          <!-- <li class="selected"><a href="#">Home</a></li>
           <li><a href="#founders">Founders</a></li>
-          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="#contact">Contact Us</a></li> -->
+          <li ng-class="{selected:$index === idSelectedPage}" ng-repeat="pages in allPages" ng-click="setSelected($index)" ><a ng-href="{{pages.url}}">{{pages.name}}</a></li>
         </ul>
       </div>
     </div>
     <div id="content_header"></div>
     <div id="site_content">
-      <div id="banner"></div>
+      <div ng-show="idSelectedPage === 0" id="banner"></div>
 	  <div id="sidebar_container">
         <div ng-include ="'pages/sidebar_container.html'"></div>
     </div>
