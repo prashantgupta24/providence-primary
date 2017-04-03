@@ -6,22 +6,17 @@ function mainFunction($scope) {
   $scope.message = "main";
   $scope.allPages = [
     {url: "#/", name: "Home"},
-    {url: "#founders", name: "founders"}
+    {url: "#founders", name: "Founders"},
+    {url: "#a_page", name: "A Page"},
+    {url: "#another_page", name: "Another Page"},
+    {url: "#contact", name: "Contact Us"}
   ];
 
   $scope.idSelectedPage=0;
 
   $scope.setSelected = function(id) {
-    console.log("Received id" + id);
     $scope.idSelectedPage=id;
   }
-}
-
-app.controller("foundersCtrl", foundersFunction);
-
-function foundersFunction($scope) {
-  $scope.message = "founders";
-  $scope.idSelectedPage=1;
 }
 
 app.config(function($routeProvider){
@@ -34,10 +29,16 @@ app.config(function($routeProvider){
       templateUrl : "pages/founders.html",
       controller  : "mainCtrl"
     })
+    .when("/a_page", {
+      templateUrl : "pages/a_page.html",
+      controller  : "mainCtrl"
+    })
+    .when("/another_page", {
+      templateUrl : "pages/another_page.html",
+      controller  : "mainCtrl"
+    })
+    .when("/contact", {
+      templateUrl : "pages/contact.html",
+      controller  : "mainCtrl"
+    })
 });
-
-//app.controller("Mainctrl", test);
-//
-// function FooterCtrl($scope) {
-//     $scope.header = {name: "footer.html", url: "footer.html"};
-// }

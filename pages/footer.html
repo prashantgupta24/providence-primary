@@ -1,2 +1,5 @@
-<p><a href="index.html">Home</a> | <a href="founders.html">Founders</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p>
+<!-- <p><a href="index.html">Home</a> | <a href="founders.html">Founders</a> | <a href="page.html">A Page</a> | <a href="another_page.html">Another Page</a> | <a href="contact.html">Contact Us</a></p> -->
+<p>
+  | <a ng-repeat="pages in allPages" ng-click="setSelected($index)" ng-href="{{pages.url}}">{{pages.name}} | </a>
+</p>
 <p>Copyright &copy; simplestyle_banner | <a href="http://www.html5webtemplates.co.uk">HTML5 Web Templates</a></p>
