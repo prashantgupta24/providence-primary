@@ -32,17 +32,17 @@ h4 {
       rgba(0, 0, 0, 0.4),
       rgba(0, 0, 0, 0.4)
     ), url("resources/school-children.jpg") no-repeat center center;*/
-    background-image: url("resources/school-children.jpg");
+    background: url("resources/school-children.jpg") no-repeat center center;
     background-size: cover;
     padding: 200px 25px;
     font-family: Montserrat, sans-serif;
     color: #fff;
     height: 100vh;
 }
-.jumbotron p {
+/*.jumbotron p {
   font-size: 15px;
   font-family:monospace;
-}
+}*/
 .container-fluid {
     padding: 60px 50px;
 }
