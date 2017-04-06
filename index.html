@@ -39,7 +39,12 @@
   </div>
 </nav>
 
-<div class="jumbotron text-center hidden-xs">
+<div class="jumbotron-large text-center hidden-xs">
+  <!-- <h1></h1> -->
+
+</div>
+
+<div class="jumbotron-small text-center visible-xs">
   <!-- <h1></h1> -->
 
 </div>
@@ -338,6 +343,12 @@ $(document).ready(function(){
     });
   });
 })
+
+$(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+        $(this).collapse('hide');
+    }
+});
 </script>
 
 </body>

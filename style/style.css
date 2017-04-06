@@ -18,7 +18,7 @@ h4 {
     font-weight: 400;
     margin-bottom: 30px;
 }
-.jumbotron {
+.jumbotron2 {
     /*background-color: #2C80BA;
     color: #fff;
     padding: 100px 25px;
@@ -39,6 +39,51 @@ h4 {
     color: #fff;
     height: 100vh;
 }
+
+.jumbotron-large {
+    /*background-color: #2C80BA;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    background-image: url("resources/school-children.jpg");
+    background-size: cover;
+    height: 700px;*/
+
+
+    /*background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url("resources/school-children.jpg") no-repeat center center;*/
+    background: url("resources/school-children.jpg") no-repeat center center;
+    background-size: cover;
+    padding: 200px 25px;
+    font-family: Montserrat, sans-serif;
+    color: #fff;
+    height: 100vh;
+}
+
+.jumbotron-small {
+    /*background-color: #2C80BA;
+    color: #fff;
+    padding: 100px 25px;
+    font-family: Montserrat, sans-serif;
+    background-image: url("resources/school-children.jpg");
+    background-size: cover;
+    height: 700px;*/
+
+
+    /*background: linear-gradient(
+      rgba(0, 0, 0, 0.4),
+      rgba(0, 0, 0, 0.4)
+    ), url("resources/school-children.jpg") no-repeat center center;*/
+    background: url("resources/small1.jpg") no-repeat center center;
+    background-size: cover;
+    padding: 200px 25px;
+    font-family: Montserrat, sans-serif;
+    color: #fff;
+    height: 100vh;
+}
+
 /*.jumbotron p {
   font-size: 15px;
   font-family:monospace;
