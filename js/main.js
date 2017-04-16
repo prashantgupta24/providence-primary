@@ -1,44 +1,48 @@
-var app = angular.module("myApp", ["ngRoute"]);
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
 
-app.controller("mainCtrl", mainFunction);
+      // Store hash
+      var hash = this.hash;
 
-function mainFunction($scope) {
-  $scope.message = "main";
-  $scope.allPages = [
-    {url: "#/", name: "Home"},
-    {url: "#founders", name: "Founders"},
-    {url: "#a_page", name: "A Page"},
-    {url: "#another_page", name: "Another Page"},
-    {url: "#contact", name: "Contact Us"}
-  ];
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
 
-  $scope.idSelectedPage=0;
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
 
-  $scope.setSelected = function(id) {
-    $scope.idSelectedPage=id;
-  }
-}
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
 
-app.config(function($routeProvider){
-  $routeProvider
-    .when("/", {
-      templateUrl : "pages/home.html",
-      controller  : "mainCtrl"
-    })
-    .when("/founders", {
-      templateUrl : "pages/founders.html",
-      controller  : "mainCtrl"
-    })
-    .when("/a_page", {
-      templateUrl : "pages/a_page.html",
-      controller  : "mainCtrl"
-    })
-    .when("/another_page", {
-      templateUrl : "pages/another_page.html",
-      controller  : "mainCtrl"
-    })
-    .when("/contact", {
-      templateUrl : "pages/contact.html",
-      controller  : "mainCtrl"
-    })
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+
+$(document).on('click','.navbar-collapse.in',function(e) {
+    if( $(e.target).is('a') && $(e.target).attr('class') != 'dropdown-toggle' ) {
+        $(this).collapse('hide');
+    }
 });
+
+function myMap() {
+  var myCenter = new google.maps.LatLng(25.969957,85.750771);
+  var mapProp = {center:myCenter, zoom:7, scrollwheel:false, draggable:false, mapTypeId:google.maps.MapTypeId.ROADMAP};
+  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  var marker = new google.maps.Marker({position:myCenter});
+  marker.setMap(map);
+}
