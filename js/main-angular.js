@@ -5,19 +5,12 @@ app.controller("mainCtrl", mainFunction);
 function mainFunction($scope) {
   $scope.message = "main";
   $scope.allPages = [
-    {url: "#/", name: "Home"},
-    {url: "#founders", name: "Founders"},
-    {url: "#a_page", name: "A Page"},
-    {url: "#another_page", name: "Another Page"},
-    {url: "#contact", name: "Contact Us"}
+    {url: "#about", name: "ABOUT"},
+    {url: "#services", name: "SERVICES"},
+    {url: "#portfolio", name: "LEADERS"},
+    {url: "#contact", name: "CONTACT"}
   ];
-
-  $scope.idSelectedPage=0;
-
-  $scope.setSelected = function(id) {
-    $scope.idSelectedPage=id;
-  }
-}
+} //map to a function
 
 app.config(function($routeProvider){
   $routeProvider
