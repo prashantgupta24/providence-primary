@@ -7,7 +7,7 @@ function mainFunction($scope) {
   $scope.allPages = [
     {url: "#about", name: "ABOUT"},
     {url: "#services", name: "SERVICES"},
-    {url: "#portfolio", name: "LEADERS"},
+    {url: "#leaders", name: "LEADERS"},
     {url: "#contact", name: "CONTACT"}
   ];
 } //map to a function
